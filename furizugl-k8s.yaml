@@ -16,11 +16,11 @@ spec:
       - name: backend-api
         image: furizu_game_list-backend:latest
         imagePullPolicy: Always
-        # env:
-        # - name: NAMA_PRAKTIKAN
-        #   value: "Fakhri Rizkiana"
-        # - name: NIM_PRAKTIKAN
-        #   value: "2405534"
+        env:
+        - name: NAMA_PRAKTIKAN
+          value: "Fakhri Rizkiana"
+        - name: NIM_PRAKTIKAN
+          value: "2405534"
         # --- TAMBAHAN MODUL 2 ---
         livenessProbe:      # Mengecek apakah aplikasi hang
           httpGet:
