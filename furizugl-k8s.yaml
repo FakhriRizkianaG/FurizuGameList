@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-api
-        image: furizu_game_list-backend:latest
+        image: fakhririzkianag/furizu_game_list-backend:latest
         imagePullPolicy: Always
         env:
         - name: NAMA_PRAKTIKAN
@@ -44,7 +44,7 @@ spec:
     - protocol: TCP
       port: 5000
       targetPort: 5000
-  type: LoadBalancer
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -62,7 +62,7 @@ spec:
     spec:
       containers:
       - name: frontend-ui
-        image: furizu_game_list-frontend:latest
+        image: fakhririzkianag/furizu_game_list-frontend:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -78,4 +78,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: LoadBalancer
+  type: ClusterIP
